@@ -40,7 +40,7 @@ public class PointRepositoryBean extends AbstractRepositoryBean implements Point
     }
 
     /**
-     * @return список точек, относящихся к данному узлу
+     * @return список задействованных точек, относящихся к данному узлу
      */
     @Override
     public List<Point> getOccupiedPointsByNodeName(String nodeName) {
