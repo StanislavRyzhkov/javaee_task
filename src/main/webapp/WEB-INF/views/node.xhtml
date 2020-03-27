@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<f:metadata>
+  <f:viewParam name="nodeName" value="#{nodeBean.nodeName}"/>
+</f:metadata>
+
+<h:head>
+  <title>
+    Соединения
+    <h:outputText value="#{nodeBean.nodeName}"/>
+  </title>
+</h:head>
+
+<h:body>
+
+  <h1>
+    <h:outputText value="#{nodeBean.nodeName}"/>
+  </h1>
+
+  <h:form>
+    <p:dataTable var="link" value="#{nodeBean.linkDtoList}">
+      <p:column headerText="Узел">
+        <h:outputText value="#{link.originalNodeName}" />
+      </p:column>
+
+      <p:column headerText="Коннектор">
+        <h:outputText value="#{link.originalCUName}" />
+      </p:column>
+
+      <p:column headerText="Точка">
+        <h:outputText value="#{link.originalPointNumber}" />
+      </p:column>
+
+      <p:column headerText="Соответствует">
+        <h:outputText value="= " />
+      </p:column>
+
+      <p:column headerText="Противоположная точка">
+        <h:outputText value="#{link.oppositePointNumber}" />
+      </p:column>
+
+      <p:column headerText="коннектор">
+        <h:outputText value="#{link.oppositeCUName}" />
+      </p:column>
+
+      <p:column headerText="Узел">
+        <h:outputText value="#{link.oppositeNodeName}" />
+      </p:column>
+    </p:dataTable>
+  </h:form>
+</h:body>
+</html>
